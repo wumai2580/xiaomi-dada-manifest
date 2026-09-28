@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote  name="github" fetch="https://github.com/" />
+  <default remote="github" revision="main" sync-j="8" />
+
+  <!-- dada device bring-up: overlay + patches + tools -->
+  <project path="dada" name="wumai2580/xiaomi-dada-uefi" revision="main" />
+
+  <!-- Project Mu workspace root -->
+  <project path="uefi/mu_aloha_platforms" name="Project-Aloha/mu_aloha_platforms"
+           revision="fd6806a000fb12d07bef404613c860812b39972f" />
+
+  <!-- nested workspace checkouts (upstream, pinned) -->
+  <project path="uefi/mu_aloha_platforms/MU_BASECORE" name="microsoft/mu_basecore"
+           revision="13e2fc5a51365ea4587b4777496417d0b084ab74" upstream="release/202502" />
+  <project path="uefi/mu_aloha_platforms/Common/MU" name="microsoft/mu_plus"
+           revision="8b646ce3484d3536c65244a3afd7b60739dc6983" upstream="release/202502" />
+  <project path="uefi/mu_aloha_platforms/Common/MU_TIANO" name="microsoft/mu_tiano_plus"
+           revision="2dd1beb9cd7631030dfc8e74cb4840a89b5d008d" upstream="release/202502" />
+  <project path="uefi/mu_aloha_platforms/Common/MU_OEM_SAMPLE" name="microsoft/mu_oem_sample"
+           revision="e798945fbe64baad73e9c4ec7cfb26efaa95d4e3" upstream="release/202502" />
+  <project path="uefi/mu_aloha_platforms/Silicon/Arm/MU_TIANO" name="microsoft/mu_silicon_arm_tiano"
+           revision="e1f0860555bf578e330db599463458347ddaedca" upstream="release/202502" />
+  <project path="uefi/mu_aloha_platforms/Binaries" name="Project-Aloha/SurfaceDuoBinaries-fork"
+           revision="ce59dcf54753e112d7b847dd997d3ae934094e0d" />
+  <project path="uefi/mu_aloha_platforms/Platforms/SurfaceDuoACPI" name="Project-Aloha/acpi_oem_third_party_common"
+           revision="d742758fe575c08b5278d84fec1b3b313551a587" />
+  <project path="uefi/mu_aloha_platforms/Platforms/CranePkg" name="Project-Aloha/CrDK"
+           revision="80e799e630ff50dba5096b431e0d9d56aca67f74" upstream="main" />
+  <project path="uefi/mu_aloha_platforms/Features/DFCI" name="microsoft/mu_feature_dfci"
+           revision="4299a91d188967719d3ea9d6c9e1b1f88344cbf2" />
+  <project path="uefi/mu_aloha_platforms/Features/CONFIG" name="microsoft/mu_feature_config"
+           revision="b0263188c26644d2ac984a9af87ce5b8eb74d73e" />
+  <project path="uefi/mu_aloha_platforms/Platforms/OpensslPkg/Library/OpensslLib/openssl"
+           name="openssl/openssl" revision="aea7aaf2abb04789f5868cbabec406ea43aa84bf" />
+  <project path="uefi/mu_aloha_platforms/MU_BASECORE/MdePkg/Library/MipiSysTLib/mipisyst"
+           name="MIPI-Alliance/public-mipi-sys-t" revision="370b5944c046bab043dd8b133727b2135af7747a" />
+  <project path="uefi/mu_aloha_platforms/MU_BASECORE/MdeModulePkg/Library/BrotliCustomDecompressLib/brotli"
+           name="google/brotli" revision="028fb5a23661f123017c060daa546b55cf4bde29" />
+</manifest>
