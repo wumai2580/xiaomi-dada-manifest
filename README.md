@@ -1,7 +1,6 @@
 # xiaomi-dada-manifest
 
-`repo` manifest for the Xiaomi 15 (`dada`, SM8750/Pakala) UEFI workspace —
-the same integration style as `MeowArchMobile_Manifest`.
+`repo` manifest for the Xiaomi 15 (`dada`, SM8750/Pakala) UEFI workspace.
 
 ## Checkout
 
@@ -13,7 +12,7 @@ repo sync -j8
 ## Layout
 
 ```
-dada/                     <- wumai2580/xiaomi-dada-uefi (overlay + patches + tools)
+dada/                     <- wumai2580/xiaomi-dada-uefi (workspace files + delta + tools)
 uefi/mu_aloha_platforms/  <- Project-Aloha workspace at pinned commit
   MU_BASECORE/            <- microsoft/mu_basecore        @ 13e2fc5 (release/202502)
   Common/MU/              <- microsoft/mu_plus            @ 8b646ce (release/202502)
@@ -29,11 +28,11 @@ uefi/mu_aloha_platforms/  <- Project-Aloha workspace at pinned commit
 
 ```bash
 cd uefi/mu_aloha_platforms
-git apply ../../dada/patches/mu_aloha_platforms.patch
-git -C MU_BASECORE          apply ../../dada/patches/mu_basecore.patch
-git -C Common/MU            apply ../../dada/patches/mu_plus.patch
-git -C Silicon/Arm/MU_TIANO apply ../../dada/patches/mu_silicon_arm_tiano.patch
-cp -a ../../dada/overlay/. .
+git apply ../../dada/delta/00-workspace.patch
+git -C MU_BASECORE          apply ../../dada/delta/10-basecore.patch
+git -C Common/MU            apply ../../dada/delta/11-plus.patch
+git -C Silicon/Arm/MU_TIANO apply ../../dada/delta/12-silicon-arm.patch
+cp -a ../../dada/workspace/. .
 ```
 
 ## Build
